@@ -197,7 +197,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-S4-Feg" userLabel="Black Time Button">
-                                                <rect key="frame" x="55" y="0.0" width="320" height="283.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="81"/>
                                                 <state key="normal" title="200:00">
@@ -211,7 +211,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="JaV-S4-Feg" secondAttribute="bottom" id="2id-xk-oK9"/>
-                                            <constraint firstItem="JaV-S4-Feg" firstAttribute="leading" secondItem="SOc-r4-unA" secondAttribute="leading" constant="55" id="SAB-jP-gjn"/>
+                                            <constraint firstItem="JaV-S4-Feg" firstAttribute="leading" secondItem="SOc-r4-unA" secondAttribute="leading" id="SAB-jP-gjn"/>
                                             <constraint firstAttribute="trailing" secondItem="JaV-S4-Feg" secondAttribute="trailing" id="a0i-Pp-SEm"/>
                                             <constraint firstItem="JaV-S4-Feg" firstAttribute="top" secondItem="SOc-r4-unA" secondAttribute="top" id="g5c-yo-cFs"/>
                                         </constraints>
@@ -246,7 +246,7 @@
                                         <rect key="frame" x="0.0" y="383.5" width="375" height="283.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AN-mI-O3c" userLabel="White Time Button">
-                                                <rect key="frame" x="55" y="0.0" width="320" height="283.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="81"/>
                                                 <state key="normal" title="200:00">
@@ -262,7 +262,7 @@
                                             <constraint firstAttribute="bottom" secondItem="9AN-mI-O3c" secondAttribute="bottom" id="VU3-CD-lbb"/>
                                             <constraint firstItem="9AN-mI-O3c" firstAttribute="top" secondItem="kT6-yx-grR" secondAttribute="top" id="d5r-hn-Z7g"/>
                                             <constraint firstAttribute="trailing" secondItem="9AN-mI-O3c" secondAttribute="trailing" id="onn-k2-lL0"/>
-                                            <constraint firstItem="9AN-mI-O3c" firstAttribute="leading" secondItem="kT6-yx-grR" secondAttribute="leading" constant="55" id="zq2-Ug-WsM"/>
+                                            <constraint firstItem="9AN-mI-O3c" firstAttribute="leading" secondItem="kT6-yx-grR" secondAttribute="leading" id="zq2-Ug-WsM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
