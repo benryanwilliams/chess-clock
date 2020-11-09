@@ -18,10 +18,26 @@ class TimerViewController: UIViewController {
     var whiteIsActive = false
     var blackIsActive = false
     
-    var totalWhiteSecondsRemaining = 1000
-    var totalBlackSecondsRemaining = 1000
+    var timeInMinutes: Int = 0
+    var incrementInSeconds: Int = 0
+    
+    let timeToGoRed = 30
     
     var mainTimer : Timer?
+    
+    var totalWhiteSecondsRemaining = 0 {
+        // Set colour of black side's text to red when the timer hits 50 seconds and set background to red and text to black when the timer hits 0 seconds
+        didSet {
+            setWhiteColoursWhileActive()
+        }
+    }
+    
+    var totalBlackSecondsRemaining = 0 {
+        // Set colour of black side's text to red when the timer hits 50 seconds and set background to red and text to black when the timer hits 0 seconds
+        didSet {
+            setBlackColours()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +47,18 @@ class TimerViewController: UIViewController {
         longGesture.minimumPressDuration = 1
         backButton.addGestureRecognizer(longGesture)
         
+        let monospacedFont = UIFont.monospacedDigitSystemFont(ofSize: 81, weight: UIFont.Weight.heavy)
+        whiteTimeLabel.titleLabel?.font = monospacedFont
+        blackTimeLabel.titleLabel?.font = monospacedFont
+        
+        totalWhiteSecondsRemaining = timeInMinutes * 60
+        updateWhiteTimer(with: totalWhiteSecondsRemaining)
+        
+        totalBlackSecondsRemaining = timeInMinutes * 60
+        updateBlackTimer(with: totalBlackSecondsRemaining)
     }
+    
+    // MARK:- Black and White Button IBActions
     
     @IBAction func whitePressed(_ sender: UIButton) {
         
@@ -45,6 +72,9 @@ class TimerViewController: UIViewController {
             
             startBlackTimer()
             blackIsActive = true
+            
+            setColoursWhenWhitePressed()
+            
         }
     }
     
@@ -60,23 +90,24 @@ class TimerViewController: UIViewController {
             
             startWhiteTimer()
             whiteIsActive = true
+            
+            setColoursWhenBlackPressed()
         }
-        
     }
     
-    // MARK:- White Timer functions
+    // MARK:- White Timer methods
     
-    func startWhiteTimer()
-    {
+    func startWhiteTimer() {
         if mainTimer == nil {
             mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(whiteTimerFired), userInfo: nil, repeats: true)
         }
     }
     
-    func stopWhiteTimer()
-    {
+    func stopWhiteTimer() {
         if mainTimer != nil {
             mainTimer!.invalidate()
+            totalWhiteSecondsRemaining += incrementInSeconds
+            updateWhiteTimer(with: totalWhiteSecondsRemaining)
             mainTimer = nil
         }
     }
@@ -85,31 +116,56 @@ class TimerViewController: UIViewController {
         if self.totalWhiteSecondsRemaining > 0 {
             self.totalWhiteSecondsRemaining -= 1
             
-            let minutes = Int(self.totalWhiteSecondsRemaining) / 60 % 60
-            let seconds = Int(self.totalWhiteSecondsRemaining) % 60
-            
-            let currentTime = String(format: "%02i:%02i", minutes, seconds)
-            self.whiteTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
-            
+            updateWhiteTimer(with: totalWhiteSecondsRemaining)
         }
         else {
             mainTimer?.invalidate()
         }
     }
     
-    // MARK:- Black Timer functions
+    func updateWhiteTimer(with secs: Int) {
+        let minutes = Int(secs) / 60 % 60
+        let seconds = Int(secs) % 60
+        
+        let currentTime = String(format: "%02i:%02i", minutes, seconds)
+        self.whiteTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+    }
     
-    func startBlackTimer()
-    {
+    func setWhiteColoursWhileActive() {
+        if totalWhiteSecondsRemaining == timeToGoRed {
+            whiteTimeLabel.setTitleColor(.red, for: .normal)
+        }
+        if totalWhiteSecondsRemaining == 0 {
+            whiteTimeLabel.setTitleColor(.white, for: .normal)
+            whiteTimeLabel.backgroundColor = .red
+        }
+    }
+    
+    func setColoursWhenWhitePressed() {
+        if totalBlackSecondsRemaining <= timeToGoRed {
+            blackTimeLabel.setTitleColor(.red, for: .normal)
+        }
+        if totalBlackSecondsRemaining == 0 {
+            blackTimeLabel.setTitleColor(.black, for: .normal)
+        }
+        else {
+            whiteTimeLabel.setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    // MARK:- Black Timer methods
+    
+    func startBlackTimer() {
         if mainTimer == nil {
             mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(blackTimerFired), userInfo: nil, repeats: true)
         }
     }
     
-    func stopBlackTimer()
-    {
+    func stopBlackTimer() {
         if mainTimer != nil {
             mainTimer!.invalidate()
+            totalBlackSecondsRemaining += incrementInSeconds
+            updateBlackTimer(with: totalBlackSecondsRemaining)
             mainTimer = nil
         }
     }
@@ -118,19 +174,44 @@ class TimerViewController: UIViewController {
         if self.totalBlackSecondsRemaining > 0 {
             self.totalBlackSecondsRemaining -= 1
             
-            let minutes = Int(self.totalBlackSecondsRemaining) / 60 % 60
-            let seconds = Int(self.totalBlackSecondsRemaining) % 60
-            
-            let currentTime = String(format: "%02i:%02i", minutes, seconds)
-            self.blackTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
-            
+            updateBlackTimer(with: totalBlackSecondsRemaining)
         }
         else {
             mainTimer?.invalidate()
         }
     }
     
-    // MARK:- Back Button functions
+    func updateBlackTimer(with secs: Int) {
+        let minutes = Int(secs) / 60 % 60
+        let seconds = Int(secs) % 60
+        
+        let currentTime = String(format: "%02i:%02i", minutes, seconds)
+        self.blackTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+    }
+    
+    func setBlackColours() {
+        if totalBlackSecondsRemaining == timeToGoRed {
+            blackTimeLabel.setTitleColor(.red, for: .normal)
+        }
+        if totalBlackSecondsRemaining == 0 {
+            blackTimeLabel.setTitleColor(.black, for: .normal)
+            blackTimeLabel.backgroundColor = .red
+        }
+    }
+    
+    func setColoursWhenBlackPressed() {
+        if totalWhiteSecondsRemaining <= timeToGoRed {
+            whiteTimeLabel.setTitleColor(.red, for: .normal)
+        }
+        if totalWhiteSecondsRemaining == 0 {
+            whiteTimeLabel.setTitleColor(.white, for: .normal)
+        }
+        else {
+            blackTimeLabel.setTitleColor(.white, for: .normal)
+        }
+    }
+    
+    // MARK:- Back Button methods
     
     @objc func backButtonLongTap(_ sender: UIGestureRecognizer){
         if sender.state == .began {
@@ -153,15 +234,4 @@ class TimerViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

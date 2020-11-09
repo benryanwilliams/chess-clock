@@ -64,6 +64,7 @@
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0A-Mv-prJ" userLabel="Increment Picker View">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="166.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -79,12 +80,12 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="vcD-zm-uID"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="45"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nzy-g4-GAf">
-                                                        <rect key="frame" x="0.0" y="25" width="187.5" height="81"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up-arrow-black" translatesAutoresizingMaskIntoConstraints="NO" id="nzy-g4-GAf">
+                                                        <rect key="frame" x="0.0" y="24" width="187.5" height="83"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
@@ -103,18 +104,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xh-6l-xEa">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="167"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCREMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KHq-5f-O7D">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCR." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KHq-5f-O7D">
                                                         <rect key="frame" x="0.0" y="107" width="187.5" height="60"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="HQt-1o-KUr"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="45"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-PH-u85">
-                                                        <rect key="frame" x="0.0" y="25" width="187.5" height="81"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up-arrow-white" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-PH-u85">
+                                                        <rect key="frame" x="0.0" y="24" width="187.5" height="83"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
@@ -203,6 +204,9 @@
                                                 <state key="normal" title="200:00">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="blackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afc-OT-Pqt"/>
                                                 </connections>
@@ -252,6 +256,9 @@
                                                 <state key="normal" title="200:00">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="whitePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y7d-ru-Cof"/>
                                                 </connections>
@@ -299,6 +306,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.up" catalog="system" width="120" height="128"/>
+        <image name="up-arrow-black" width="256" height="256"/>
+        <image name="up-arrow-white" width="256" height="256"/>
     </resources>
 </document>
