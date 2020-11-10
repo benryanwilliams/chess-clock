@@ -21,7 +21,7 @@ class TimerViewController: UIViewController {
     var timeInMinutes: Int = 0
     var incrementInSeconds: Int = 0
     
-    let timeToGoRed = 30
+    let timeToGoRed = 31 * 1000
     
     var mainTimer : Timer?
     
@@ -51,10 +51,10 @@ class TimerViewController: UIViewController {
         whiteTimeLabel.titleLabel?.font = monospacedFont
         blackTimeLabel.titleLabel?.font = monospacedFont
         
-        totalWhiteSecondsRemaining = timeInMinutes * 60
+        totalWhiteSecondsRemaining = timeInMinutes * 60 * 1000
         updateWhiteTimer(with: totalWhiteSecondsRemaining)
         
-        totalBlackSecondsRemaining = timeInMinutes * 60
+        totalBlackSecondsRemaining = timeInMinutes * 60 * 1000
         updateBlackTimer(with: totalBlackSecondsRemaining)
     }
     
@@ -99,7 +99,7 @@ class TimerViewController: UIViewController {
     
     func startWhiteTimer() {
         if mainTimer == nil {
-            mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(whiteTimerFired), userInfo: nil, repeats: true)
+            mainTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(whiteTimerFired), userInfo: nil, repeats: true)
         }
     }
     
@@ -124,11 +124,20 @@ class TimerViewController: UIViewController {
     }
     
     func updateWhiteTimer(with secs: Int) {
-        let minutes = Int(secs) / 60 % 60
-        let seconds = Int(secs) % 60
+        let minutes = Int(secs) / 1000 / 60 % 60
+        let seconds = Int(secs) / 1000 % 60
+        let tenths = (Int(secs) / 10 % 100) / 10
         
-        let currentTime = String(format: "%02i:%02i", minutes, seconds)
-        self.whiteTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+        if totalWhiteSecondsRemaining < 10000 {
+            let currentTime = String(format: "%02i:%02i:%1i", minutes, seconds, tenths)
+            self.whiteTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+        }
+        else {
+            let currentTime = String(format: "%02i:%02i", minutes, seconds)
+            self.whiteTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+        }
+        
+        
     }
     
     func setWhiteColoursWhileActive() {
@@ -138,6 +147,7 @@ class TimerViewController: UIViewController {
         if totalWhiteSecondsRemaining == 0 {
             whiteTimeLabel.setTitleColor(.white, for: .normal)
             whiteTimeLabel.backgroundColor = .red
+            whiteTimeLabel.isUserInteractionEnabled = false
         }
     }
     
@@ -147,6 +157,7 @@ class TimerViewController: UIViewController {
         }
         if totalBlackSecondsRemaining == 0 {
             blackTimeLabel.setTitleColor(.black, for: .normal)
+            blackTimeLabel.isUserInteractionEnabled = false
         }
         else {
             whiteTimeLabel.setTitleColor(.black, for: .normal)
@@ -157,7 +168,7 @@ class TimerViewController: UIViewController {
     
     func startBlackTimer() {
         if mainTimer == nil {
-            mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(blackTimerFired), userInfo: nil, repeats: true)
+            mainTimer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(blackTimerFired), userInfo: nil, repeats: true)
         }
     }
     
@@ -182,11 +193,18 @@ class TimerViewController: UIViewController {
     }
     
     func updateBlackTimer(with secs: Int) {
-        let minutes = Int(secs) / 60 % 60
-        let seconds = Int(secs) % 60
+        let minutes = Int(secs) / 1000 / 60 % 60
+        let seconds = Int(secs) / 1000 % 60
+        let tenths = (Int(secs) / 10 % 100) / 10
         
-        let currentTime = String(format: "%02i:%02i", minutes, seconds)
-        self.blackTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+        if totalBlackSecondsRemaining < 10000 {
+            let currentTime = String(format: "%02i:%02i:%1i", minutes, seconds, tenths)
+            self.blackTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+        }
+        else {
+            let currentTime = String(format: "%02i:%02i", minutes, seconds)
+            self.blackTimeLabel.setTitle(String(currentTime), for: UIControl.State.normal)
+        }
     }
     
     func setBlackColours() {
@@ -196,6 +214,7 @@ class TimerViewController: UIViewController {
         if totalBlackSecondsRemaining == 0 {
             blackTimeLabel.setTitleColor(.black, for: .normal)
             blackTimeLabel.backgroundColor = .red
+            blackTimeLabel.isUserInteractionEnabled = false
         }
     }
     
@@ -205,6 +224,7 @@ class TimerViewController: UIViewController {
         }
         if totalWhiteSecondsRemaining == 0 {
             whiteTimeLabel.setTitleColor(.white, for: .normal)
+            whiteTimeLabel.isUserInteractionEnabled = false
         }
         else {
             blackTimeLabel.setTitleColor(.white, for: .normal)

@@ -37,7 +37,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             let timerVC = segue.destination as! TimerViewController
             
             timerVC.timeInMinutes = times[timePicker.selectedRow(inComponent: 0)]
-            timerVC.incrementInSeconds = increments[incrementPicker.selectedRow(inComponent: 0)]
+            timerVC.incrementInSeconds = increments[incrementPicker.selectedRow(inComponent: 0)] * 1000
         }
     }
     
