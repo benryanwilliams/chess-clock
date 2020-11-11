@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email
+*** benryanwilliams, chess-clock, twitter_handle, email
 -->
 
 
@@ -43,14 +43,14 @@
   <p align="center">
     A simple two-player countdown timer with adjustable time and increments.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/benryanwilliams/chess-clock"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/benryanwilliams/chess-clock">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/benryanwilliams/chess-clock/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/benryanwilliams/chess-clock/issues">Request Feature</a>
   </p>
 </p>
 
@@ -62,14 +62,12 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 
 
@@ -78,16 +76,10 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`
-
-
 ### Built With
 
-* []()
-* []()
-* []()
+* [Xcode](https://developer.apple.com/xcode/)
+* [Swift 5](https://developer.apple.com/swift/)
 
 
 
@@ -96,25 +88,12 @@ Here's a blank template to get started:
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
-
 ### Installation
 
 1. Clone the repo
 ```sh
-git clone https://github.com/github_username/repo_name.git
+git clone https://github.com/benryanwilliams/chess-clock
 ```
-2. Install NPM packages
-```sh
-npm install
-```
-
 
 
 <!-- USAGE EXAMPLES -->
@@ -129,7 +108,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/benryanwilliams/chess-clock/issues) for a list of proposed features (and known issues).
 
 
 
@@ -156,18 +135,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Ben Williams - benryanwilliams@hotmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
+Project Link: [https://github.com/benryanwilliams/chess-clock](https://github.com/benryanwilliams/chess-clock)
 
 
 
@@ -175,16 +145,16 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=flat-square
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=flat-square
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=flat-square
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=flat-square
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=flat-square
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/benryanwilliams/chess-clock.svg?style=flat-square
+[contributors-url]: https://github.com/benryanwilliams/chess-clock/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/benryanwilliams/chess-clock.svg?style=flat-square
+[forks-url]: https://github.com/benryanwilliams/chess-clock/network/members
+[stars-shield]: https://img.shields.io/github/stars/benryanwilliams/chess-clock.svg?style=flat-square
+[stars-url]: https://github.com/benryanwilliams/chess-clock/stargazers
+[issues-shield]: https://img.shields.io/github/issues/benryanwilliams/chess-clock.svg?style=flat-square
+[issues-url]: https://github.com/benryanwilliams/chess-clock/issues
+[license-shield]: https://img.shields.io/github/license/benryanwilliams/chess-clock.svg?style=flat-square
+[license-url]: https://github.com/benryanwilliams/chess-clock/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ben-williams-92408aa1/
 [product-screenshot]: readmescreenshot.png
