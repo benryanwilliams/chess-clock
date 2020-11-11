@@ -154,7 +154,7 @@ Project Link: [https://github.com/benryanwilliams/chess-clock](https://github.co
 [issues-shield]: https://img.shields.io/github/issues/benryanwilliams/chess-clock.svg?style=flat-square
 [issues-url]: https://github.com/benryanwilliams/chess-clock/issues
 [license-shield]: https://img.shields.io/github/license/benryanwilliams/chess-clock.svg?style=flat-square
-[license-url]: https://github.com/benryanwilliams/chess-clock/blob/master/LICENSE.txt
+[license-url]: https://github.com/benryanwilliams/chess-clock/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ben-williams-92408aa1/
 [product-screenshot]: readmescreenshot.png
