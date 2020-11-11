@@ -74,7 +74,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+[![Product Name Screen Shot][product-screenshot]]()
 
 Following completion of Angela Yu's Swift course I decided it was time to create an app from start to finish, so here it is! Firstly, I had a think about the various activities that I enjoy, and then thought about how I could make an app relating to each those. I love a good game of chess, so decided to make a chess clock app that I could use while playing chess against my friends (and enemies).
 
