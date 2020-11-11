@@ -78,8 +78,8 @@
 
 ### Built With
 
-* [Xcode](https://developer.apple.com/xcode/)
-* [Swift 5](https://developer.apple.com/swift/)
+* [Xcode 11.6](https://developer.apple.com/xcode/)
+* [Swift 5.3](https://developer.apple.com/swift/)
 
 
 
@@ -99,10 +99,9 @@ git clone https://github.com/benryanwilliams/chess-clock
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Select the time and increment then tap 'Go'. Tap the black side to start white's clock, then as soon as each player has finished their turn, they should tap their side to start their opponent's clock.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+Hold the 'Hold to go back' bar and tap 'Yes' to return to settings screen.
 
 
 <!-- ROADMAP -->
