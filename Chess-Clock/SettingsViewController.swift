@@ -13,6 +13,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var incrementPicker: UIPickerView!
     
+    @IBOutlet weak var gButton: UIButton!
+    @IBOutlet weak var oButton: UIButton!
+    
     // Declare arrays for the timePicker and incrementPicker data
     var times = [1, 2, 3, 5, 10, 15, 30]
     var increments = [0, 1, 2, 3, 5, 10, 20]
@@ -31,6 +34,22 @@ class SettingsViewController: UIViewController {
         
         incrementPicker.delegate = self
         incrementPicker.delegate = self
+        
+        let strokeTextAttributesG: [NSAttributedString.Key : Any] = [
+            .strokeColor : UIColor.red,
+            .foregroundColor : UIColor.black,
+            .strokeWidth : -2.0,
+            ]
+        
+        gButton.setAttributedTitle(NSAttributedString(string: "G", attributes: strokeTextAttributesG), for: .normal)
+        
+        let strokeTextAttributesO: [NSAttributedString.Key : Any] = [
+        .strokeColor : UIColor.red,
+        .foregroundColor : UIColor.white,
+        .strokeWidth : -2.0,
+        ]
+        
+        oButton.setAttributedTitle(NSAttributedString(string: "O", attributes: strokeTextAttributesO), for: .normal)
         
     }
     

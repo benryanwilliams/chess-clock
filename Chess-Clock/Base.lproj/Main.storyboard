@@ -174,7 +174,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dxs-gq-rhX"/>
                     <connections>
+                        <outlet property="gButton" destination="vwi-b5-LKx" id="Ew6-2H-SCK"/>
                         <outlet property="incrementPicker" destination="N0A-Mv-prJ" id="nn6-Wq-xLg"/>
+                        <outlet property="oButton" destination="AQ0-8b-O1u" id="dBu-mC-5gI"/>
                         <outlet property="timePicker" destination="BQY-BE-rjl" id="HJ5-Fz-jfO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToTimer" id="KE7-b1-hEo"/>
                     </connections>
