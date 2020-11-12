@@ -74,10 +74,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+
 Following completion of Angela Yu's Swift course I decided it was time to create an app from start to finish, so here it is! Firstly, I had a think about the various activities that I enjoy, and then thought about how I could make an app relating to each those. I love a good game of chess, so decided to make a chess clock app that I could use while playing chess against my friends (and enemies).
-
 [![Product Name Screen Shot][product-screenshot]]()
-
 The app includes two pickers to enable the user to choose the length of time, as well as the increment for each player. Once the user has pressed 'Go' they are taken to the clock screen. The white clock is started by tapping black's side and vice versa. If either player's time reaches 30 seconds, their timer turns red, and when the timer reaches 10 seconds, tenths of a second are displayed to add some urgency to the user experience. Once the timer reaches zero, the loser's side turns red.
 
 I had a lot of fun making this, and it's already come in handy a few times while out and about and in the presence of a chess set!
